@@ -36,6 +36,9 @@ class PricipalWidget extends StatelessWidget {
               color: Color.fromARGB(255, 255, 255, 255),
               child: Column(children: [
                 Container(
+                  height: 30,
+                ),
+                Container(
                   constraints: imagenTamano,
                   decoration: BoxDecoration(
                       image: DecorationImage(image: AssetImage(image))),
