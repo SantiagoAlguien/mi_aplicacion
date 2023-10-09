@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//
+//Importaciones de firebase y los servicios
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_service.dart';
 
@@ -50,7 +50,19 @@ class _HomeState extends State<Home> {
             return ListView.builder(
             itemCount: snapshot.data?.length,
             itemBuilder: (context, index) {
-              return Text(snapshot.data?[index]['name']);
+              return ListTile(
+                
+                title: Text(snapshot.data?[index]['name']),
+                onTap: () async{
+                  await Navigator.pushNamed(context, "/firebaseEditName", arguments: {
+                    "name": snapshot.data?[index]['name'],
+                    "uid": snapshot.data?[index]['uid'],
+                  });
+                  setState(() {
+                    
+                  });
+                },
+              );
             },
             );
           }else{
@@ -63,7 +75,6 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         onPressed:  () async{
         await Navigator.pushNamed(context, "/firebaseAddName");
-        
         setState((){});
         },child: const Icon(Icons.add),
       ),

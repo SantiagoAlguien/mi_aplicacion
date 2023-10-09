@@ -4,14 +4,16 @@ FirebaseFirestore db = FirebaseFirestore.instance;
 
 Future<List> getPeople() async { //esta funcion trae toda la informacion de la base de datos
   List people = [];
-
-  CollectionReference collectionReferencePeople = db.collection('people');
-
-  QuerySnapshot queryPeople = await collectionReferencePeople.get();
-
-  queryPeople.docs.forEach((documento) {
-      people.add(documento.data());
-  });
+  
+  QuerySnapshot querySnapshot = await db.collection('people').get();
+  for (var doc in querySnapshot.docs) {
+    final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+    final person ={
+      "name":data['name'],
+      "uid":doc.id
+    };
+    people.add(person);
+  }
 
   return people;
 }
@@ -20,3 +22,7 @@ Future<void> addPeople (String name) async{
   await db.collection("people").add({"name":name});
 }
 
+Future<void> updatePeople (String uid, String newName) async{
+  await db.collection("people").doc(uid).set({"name":newName});
+
+}
