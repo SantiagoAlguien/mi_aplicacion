@@ -122,6 +122,16 @@ class WidgetF extends PricipalWidget {
   String rute = "/game";
 }
 
+class WidgetG extends PricipalWidget {
+  @override
+  WidgetG({super.key});
+
+  String name = "firebasePrueba";
+  String descritiop = "CRUD de firebase";
+  String image = "assets/firebase.png";
+  String rute = "/firebase";
+}
+
 class SettingWidget extends PricipalWidget {
   @override
   Widget build(BuildContext context) {

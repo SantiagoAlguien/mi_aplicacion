@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/index.dart';
+import 'package:my_app/index.dart';
 
-void main() {
+//importaciones de firebase 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {//funcion para iniciar firebase 
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // ignore: prefer_const_constructors_in_immutables
   MyApp({Key? key}) : super(key: key);
 
   @override
@@ -22,6 +31,7 @@ class MyApp extends StatelessWidget {
         "/messages": (BuildContext context) => Menssages(),
         "/store": (BuildContext context) => Store(),
         "/game": (BuildContext context) => Game(),
+        "/firebase": (BuildContext context) => firebasePrueba(),
       },
     );
   }

@@ -6,3 +6,4 @@ export 'package:my_app/pages/pagesHome/game.dart';
 export 'package:my_app/pages/pagesHome/imagen.dart';
 export 'package:my_app/pages/pagesHome/messages.dart';
 export 'package:my_app/pages/pagesHome/store.dart';
+export 'package:my_app/pages/pagesHome/FireBase/firebase.dart';
