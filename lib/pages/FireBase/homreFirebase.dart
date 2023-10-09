@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_service.dart';
 
 // Sercicios 
-import 'package:my_app/pages/pagesHome/FireBase/firebase_service.dart';
+import 'package:my_app/pages/FireBase/firebase_service.dart';
 
 
 
@@ -23,11 +23,16 @@ class _firebasePruebaState extends State<firebasePrueba> {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({
     super.key,
   });
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +59,14 @@ class Home extends StatelessWidget {
             );
           }
         })
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed:  () async{
+        await Navigator.pushNamed(context, "/firebaseAddName");
+        
+        setState((){});
+        },child: const Icon(Icons.add),
+      ),
     );
   }
 }

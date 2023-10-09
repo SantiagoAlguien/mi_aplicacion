@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
         "/store": (BuildContext context) => Store(),
         "/game": (BuildContext context) => Game(),
         "/firebase": (BuildContext context) => firebasePrueba(),
+        "/firebaseAddName": (BuildContext context) => AddNamePage(),
       },
     );
   }

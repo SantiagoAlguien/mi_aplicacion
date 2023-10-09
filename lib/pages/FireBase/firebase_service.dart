@@ -13,7 +13,10 @@ Future<List> getPeople() async { //esta funcion trae toda la informacion de la b
       people.add(documento.data());
   });
 
-  await Future.delayed(const Duration(seconds: 10));
-
   return people;
 }
+
+Future<void> addPeople (String name) async{
+  await db.collection("people").add({"name":name});
+}
+
