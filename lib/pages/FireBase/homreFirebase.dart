@@ -48,20 +48,54 @@ class _HomeState extends State<Home> {
         builder: ((context, snapshot){
           if (snapshot.hasData) {
             return ListView.builder(
+
             itemCount: snapshot.data?.length,
             itemBuilder: (context, index) {
-              return ListTile(
-                
-                title: Text(snapshot.data?[index]['name']),
-                onTap: () async{
-                  await Navigator.pushNamed(context, "/firebaseEditName", arguments: {
-                    "name": snapshot.data?[index]['name'],
-                    "uid": snapshot.data?[index]['uid'],
-                  });
-                  setState(() {
-                    
-                  });
+
+              return Dismissible(
+                background: Container(
+                  color: Colors.red,
+                  child: const Icon(Icons.delete),
+                ),
+                onDismissed: (direction) async {
+                await deletePeople(snapshot.data?[index]['uid']);
+                snapshot.data?.removeAt(index);
                 },
+
+                confirmDismiss: (direction) async{
+                  bool result = false;
+                  
+                  result = await showDialog(
+                    context: context, 
+                    builder: (context){
+                    return AlertDialog(
+                      title: Text("¿Estas seguro de querer eliminar a ${snapshot.data?[index]['name']}?"),
+                      actions: [
+                        TextButton(onPressed: (){
+                          return Navigator.pop(context,false);
+                        }, child: Text("Cancelar", style: TextStyle(color: Colors.red),)),
+                        TextButton(onPressed: (){
+                          return Navigator.pop(context,true);
+                        }, child: Text("Si, estoy seguro"))
+                      ],
+                    );
+                  });
+                  return result;
+                },
+                direction: DismissDirection.endToStart,
+                key: Key(snapshot.data?[index]['uid']),
+                child: ListTile(
+                  title: Text(snapshot.data?[index]['name']),
+                  onTap: () async{
+                    await Navigator.pushNamed(context, "/firebaseEditName", arguments: {
+                      "name": snapshot.data?[index]['name'],
+                      "uid": snapshot.data?[index]['uid'],
+                    });
+                    setState(() {
+                      
+                    });
+                  },
+                ),
               );
             },
             );
