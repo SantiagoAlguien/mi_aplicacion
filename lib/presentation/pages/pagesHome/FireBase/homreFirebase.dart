@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //Importaciones de firebase y los servicios
-import 'firebase_service.dart';
+import '../../../../firebase_service.dart';
 // Sercicios 
 
 

@@ -47,20 +47,19 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 20, // Espacio entre la descripción y los elementos
           ),
           Expanded(
-              child: GridView.count(
+            child: GridView.count(
             crossAxisCount: 2,
             children: [
-              WidgetG(),
-              WidgetA(),
-              WidgetB(),
-              WidgetC(),
-              WidgetD(),
-              WidgetE(),
-              WidgetF(),
-              
+              Descripcion(),
+              Imagenes(),
+              Calculadora(),
+              Mensajeria(),
+              Tienda(),
+              Juego(),
+              ListUser()
             ],
           )),
-          SettingWidget()
+          Sentting()
         ]),
       ),
     );

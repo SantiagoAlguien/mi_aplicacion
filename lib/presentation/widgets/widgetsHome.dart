@@ -1,8 +1,10 @@
 // ignore_for_file: must_be_immutable, file_names
 import 'package:flutter/material.dart';
 
-class PricipalWidget extends StatelessWidget {
-  PricipalWidget({super.key});
+//cambiar nombres 
+
+class Pricipal extends StatelessWidget {
+  Pricipal({super.key});
 
   String name = "";
   String descritiop = "";
@@ -62,9 +64,9 @@ class PricipalWidget extends StatelessWidget {
   }
 }
 
-class WidgetA extends PricipalWidget {
+class Descripcion extends Pricipal {
   @override
-  WidgetA({super.key});
+  Descripcion({super.key});
 
   String name = "Descripcion";
   String descritiop = "Descripcion de la aplicacion";
@@ -72,19 +74,18 @@ class WidgetA extends PricipalWidget {
   String rute = "/description";
 }
 
-class WidgetB extends PricipalWidget {
+class Imagenes extends Pricipal {
   @override
-  WidgetB({super.key});
-
+  Imagenes({super.key});
   String name = "Imagenes";
   String descritiop = "Visor de imagenes";
   String image = "assets/galeria-de-imagenes.png";
   String rute = "/imagen";
 }
 
-class WidgetC extends PricipalWidget {
+class Calculadora extends Pricipal {
   @override
-  WidgetC({super.key});
+  Calculadora({super.key});
 
   String name = "Calculadora";
   String descritiop = "Calculadora simple";
@@ -92,9 +93,9 @@ class WidgetC extends PricipalWidget {
   String rute = "/calculate";
 }
 
-class WidgetD extends PricipalWidget {
+class Mensajeria extends Pricipal {
   @override
-  WidgetD({super.key});
+  Mensajeria({super.key});
 
   String name = "Mensajeria";
   String descritiop = "Ver mensajes locales";
@@ -102,9 +103,9 @@ class WidgetD extends PricipalWidget {
   String rute = "/messages";
 }
 
-class WidgetE extends PricipalWidget {
+class Tienda extends Pricipal {
   @override
-  WidgetE({super.key});
+  Tienda({super.key});
 
   String name = "Tienda";
   String descritiop = "Ver una tienda offline";
@@ -112,9 +113,9 @@ class WidgetE extends PricipalWidget {
   String rute = "/store";
 }
 
-class WidgetF extends PricipalWidget {
+class Juego extends Pricipal {
   @override
-  WidgetF({super.key});
+  Juego({super.key});
 
   String name = "Juego";
   String descritiop = "Juego simple";
@@ -122,17 +123,17 @@ class WidgetF extends PricipalWidget {
   String rute = "/game";
 }
 
-class WidgetG extends PricipalWidget {
+class ListUser extends Pricipal {
   @override
-  WidgetG({super.key});
+  ListUser({super.key});
 
-  String name = "firebasePrueba";
+  String name = "Lista firebase";
   String descritiop = "CRUD de firebase";
   String image = "assets/firebase.png";
   String rute = "/firebase";
 }
 
-class SettingWidget extends PricipalWidget {
+class Sentting extends Pricipal {
   @override
   Widget build(BuildContext context) {
     String image = "assets/configuraciones.png";

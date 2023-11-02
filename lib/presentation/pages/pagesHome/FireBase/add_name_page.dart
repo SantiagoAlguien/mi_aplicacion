@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/FireBase/firebase_service.dart';
+import 'package:my_app/firebase_service.dart';
 
 
 class AddNamePage extends StatefulWidget {
