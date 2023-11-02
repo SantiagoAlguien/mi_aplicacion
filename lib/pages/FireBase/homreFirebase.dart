@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
 //Importaciones de firebase y los servicios
-import 'package:firebase_core/firebase_core.dart';
 import 'firebase_service.dart';
-
 // Sercicios 
-import 'package:my_app/pages/FireBase/firebase_service.dart';
 
 
 
@@ -61,7 +58,6 @@ class _HomeState extends State<Home> {
                 await deletePeople(snapshot.data?[index]['uid']);
                 snapshot.data?.removeAt(index);
                 },
-
                 confirmDismiss: (direction) async{
                   bool result = false;
                   

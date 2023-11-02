@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/widgets/widgetsHome.dart';
+import 'package:my_app/presentation/widgets/widgetsHome.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
