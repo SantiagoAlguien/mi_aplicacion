@@ -1,11 +1,8 @@
 import 'package:my_app/domain/Entities/person.dart';
 
-class PersonRepository {
-  final PersonDataSource dataSource;
-
-  PersonRepository(this.dataSource);
-
-  Future<List<Person>> getPeople() {
-    return dataSource.getPeopleFromFirestore();
-  }
+abstract class PersonRepository {
+  Future<List<Person>> getPeople();
+  Future<void> addPerson(String name);
+  Future<void> updatePerson(String uid, String newName);
+  Future<void> deletePerson(String uid);
 }

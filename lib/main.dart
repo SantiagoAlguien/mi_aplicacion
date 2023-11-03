@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/index.dart';
+import 'package:my_app/presentation/pages/index.dart';
 
 //importaciones de firebase 
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'domain/data/firebase_options.dart';
 
 void main() async {//funcion para iniciar firebase 
   WidgetsFlutterBinding.ensureInitialized();

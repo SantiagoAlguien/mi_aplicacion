@@ -1,0 +1,11 @@
+export 'package:my_app/presentation/pages/pagesHome/Calulate/calculate.dart';
+export 'package:my_app/presentation/pages/pagesHome/Configuration/configuration.dart';
+export 'package:my_app/presentation/pages/home.dart';
+export 'package:my_app/presentation/pages/pagesHome/Description/description.dart';
+export 'package:my_app/presentation/pages/pagesHome/Game/game.dart';
+export 'package:my_app/presentation/pages/pagesHome/Imagen/imagen.dart';
+export 'package:my_app/presentation/pages/pagesHome/Message/messages.dart';
+export 'package:my_app/presentation/pages/pagesHome/Store/store.dart';
+export 'package:my_app/presentation/pages/pagesHome/FireBase/homreFirebase.dart';
+export 'package:my_app/presentation/pages/pagesHome/FireBase/add_name_page.dart';
+export 'package:my_app/presentation/pages/pagesHome/FireBase/edit_name_page.dart';

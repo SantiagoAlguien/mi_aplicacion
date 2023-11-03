@@ -3,12 +3,12 @@
 import 'package:my_app/domain/Entities/person.dart';
 import 'package:my_app/domain/repositories/person_repository.dart';
 
-class GetPeople {
+class GetPeopleUseCase {
   final PersonRepository repository;
 
-  GetPeople(this.repository);
+  GetPeopleUseCase(this.repository);
 
-  Future<List<Person>> call() {
-    return repository.getPeople();
+  Future<List<Person>> call() async {
+    return await repository.getPeople();
   }
 }
